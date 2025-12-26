@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SimpleFlow - Authentication</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&family=Figtree:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container" id="main-app">
+        <div class="left-section">
+            <div class="overlay"></div>
+            <div class="left-content top-text">
+                <h1>Welcome to SimpleFlow</h1>
+                <p>Your Gateway to Effortless Management.</p>
+            </div>
+            <div class="left-content bottom-text">
+                <h2>Seamless Collaboration</h2>
+                <p>Effortlessly work together with your team in real-time.</p>
+            </div>
+        </div>
+
+        <div class="right-section">
+            <div class="form-wrapper">
+                
+                <div class="brand-header">
+                    <div class="logo-icon">S</div>
+                    <span class="logo-text">SimpleFlow</span>
+                </div>
+
+                <div class="tabs">
+                    <button class="tab active" data-target="signup">Sign up</button>
+                    <button class="tab" data-target="signin">Sign In</button>
+                </div>
+
+                <form id="authForm">
+                    
+                    <div class="input-group" id="field-username">
+                        <label for="username">Username</label>
+                        <div class="input-box">
+                            <input type="text" id="username" placeholder="Pick a Username">
+                        </div>
+                        <small class="error-msg"></small>
+                    </div>
+
+                    <div class="input-group" id="field-fullname">
+                        <label for="fullName">Full Name</label>
+                        <div class="input-box">
+                            <input type="text" id="fullName" placeholder="Enter Your Name">
+                        </div>
+                        <small class="error-msg"></small>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="email">Email</label>
+                        <div class="input-box">
+                            <input type="email" id="email" placeholder="Enter Your Email Address">
+                        </div>
+                        <small class="error-msg"></small>
+                    </div>
+
+                    <div class="input-group">
+                        <div class="label-row">
+                            <label for="password">Password</label>
+                            <a href="#" class="forgot-pass" id="forgotPassLink">Forgot Password?</a>
+                        </div>
+                        <div class="input-box">
+                            <input type="password" id="password" placeholder="Enter Password">
+                        </div>
+                        
+                        <div class="password-feedback" id="passwordFeedback">
+                            <div class="strength-meter">
+                                <span id="strengthText">Password Strength: Weak</span>
+                            </div>
+                            <ul class="requirements-list">
+                                <li id="req-name">
+                                    <div class="checkbox-circle"></div>
+                                    Cannot contain your name or email
+                                </li>
+                                <li id="req-length">
+                                    <div class="checkbox-circle"></div>
+                                    At least 8 characters
+                                </li>
+                                <li id="req-symbol">
+                                    <div class="checkbox-circle"></div>
+                                    Contains a number or symbol
+                                </li>
+                            </ul>
+                        </div>
+                        <small class="error-msg"></small>
+                    </div>
+
+                    <button type="submit" class="submit-btn" id="submitBtn">Create Account</button>
+
+                    <p class="terms-text">
+                        By signing up to create an account I accept Company’s 
+                        <a href="#">Terms of use</a> & <a href="#">Privacy Policy</a>.
+                    </p>
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div id="welcome-screen" class="hidden">
+        <div class="welcome-card">
+            <h1>Welcome, <span id="display-name"></span>!</h1>
+            <p>Your SimpleFlow account has been accessed successfully.</p>
+            <button class="submit-btn" style="width: 200px; margin-top: 24px;" onclick="location.reload()">Back to Home</button>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
